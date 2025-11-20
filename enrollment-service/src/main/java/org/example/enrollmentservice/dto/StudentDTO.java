@@ -1,4 +1,13 @@
 package org.example.enrollmentservice.dto;
 
-public class StudentDto {
-}
+import lombok.Data;
+
+
+    @Data
+    public class StudentDTO {
+        private Long id;
+        private String fullname;
+        private String email;
+    }
+
+
