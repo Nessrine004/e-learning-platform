@@ -104,11 +104,12 @@ Calls via Feign
 
 ![Architecture](pics/e-9.jpeg)
 
-![Architecture](pics/img.png)
-![Architecture](pics/img_1.png)
 On a intégré un WebClient dans le microservice course-service afin de permettre la récupération dynamique de contenus externes. Le service interroge l’API YouTube Data API v3 pour rechercher des vidéos pédagogiques liées aux cours (ex : Java, DevOps, Microservices…). Un endpoint REST /api/courses/youtube/search a été ajouté pour exposer ces résultats.
 
 Tester la recherche YouTube (WebClient)--> http://localhost:8081/api/courses/youtube/search?q=java&maxResults=1
+![Architecture](pics/img.png)
+![Architecture](pics/img_1.png)
+
 
 
 
