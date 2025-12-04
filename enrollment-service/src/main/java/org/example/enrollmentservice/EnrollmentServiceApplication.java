@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients(basePackages = "org.example.enrollmentservice.clients")
 public class EnrollmentServiceApplication {
 
     public static void main(String[] args) {

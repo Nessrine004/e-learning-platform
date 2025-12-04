@@ -112,8 +112,33 @@ Tester la recherche YouTube (WebClient)--> http://localhost:8081/api/courses/you
 
 
 
+###  Extension : microservice `certificate-service` (certificats PDF)
+
+Nous avons ajouté un microservice `certificate-service` dédié à la génération de certificats de réussite au format PDF.  
+Les tests ont été réalisés avec Postman :
+
+1. **Création d’un certificat**
+    - **Méthode** : `POST`
+    - **URL** : `http://localhost:8086/api/certificates`
+    - **Body (JSON)** :
+      ```json
+      {
+        "studentId": 1,
+        "courseId": 2,
+        "studentName": "Rania Ben Abdellah",
+        "courseTitle": "Architecture Microservices"
+      }
+      ```
+    -  La réponse contient l’objet `Certificate` avec le champ `pdfData` (contenu du PDF encodé en Base64).
+
+2. **Téléchargement du certificat au format PDF**
+    - **Méthode** : `GET`
+    - **URL** : `http://localhost:8086/api/certificates/1/download`
+    -  Postman affiche le certificat généré (aperçu PDF) avec le nom de l’étudiant et le titre du cours, confirmant le bon fonctionnement du service PDF.
 
 
+![Architecture](pics/img_2.png)
+![Architecture](pics/img_3.png)
 
 
  
