@@ -140,7 +140,89 @@ Les tests ont été réalisés avec Postman :
 ![Architecture](pics/img_2.png)
 ![Architecture](pics/img_3.png)
 
+Interface Front-End (React + Vite)
 
- 
+L’interface utilisateur de la plateforme E-Learning a été développée avec React (via Vite) afin d’offrir une expérience fluide, moderne et responsive.
+Elle permet d’interagir avec l’ensemble des microservices exposés par le backend : cours, enseignants, étudiants, inscriptions et certificats.
 
+✨ Page d’accueil (Landing Page)
 
+La page d’accueil a été entièrement travaillée pour reproduire une expérience similaire à Moodle, avec :
+
+Une section Hero présentant la plateforme
+
+Un bandeau introductif avec texte descriptif
+
+Deux boutons d’action :
+
+Voir les cours
+
+Rencontrer les enseignants
+
+Un visuel central représentant les microservices (architecture)
+
+Une section “Statistiques” affichant des données clés :
+
+Nombre de cours
+
+Nombre d’enseignants
+
+Profil des étudiants
+
+Gestion des certificats PDF
+
+Cette page sert de porte d’entrée principale vers les différents modules de l’application.
+
+🎛️ Navigation globale
+
+Une barre de navigation est incluse dans toutes les pages :
+
+Accueil
+
+Cours
+
+Enseignants
+
+Étudiants
+
+Inscriptions
+
+Certificats
+
+L’état actif utilise NavLink pour un surlignage automatique.
+
+📄 Pages disponibles
+Chaque microservice expose une page dédiée :
+
+| Page            | Fonctionnalité            | Microservice concerné |
+| --------------- | ------------------------- | --------------------- |
+| `/courses`      | Liste des cours           | course-service        |
+| `/teachers`     | Professeurs               | teacher-service       |
+| `/students`     | Étudiants                 | student-service       |
+| `/enrollments`  | Inscriptions              | enrollment-service    |
+| `/certificates` | Liste/gestion certificats | certificate-service   |
+
+Structure du Front-End
+
+frontend/
+│── src/
+│   │── pages/
+│   │   ├── Home.jsx
+│   │   ├── Courses.jsx
+│   │   ├── Teachers.jsx
+│   │   ├── Students.jsx
+│   │   └── Enrollments.jsx
+│   │── App.jsx
+│   │── App.css
+│   └── main.jsx
+│
+└── index.html
+
+Launch du Front-End
+cd frontend
+npm install
+npm run dev
+
+Application accessible sur :
+
+👉 http://localhost:5173
