@@ -1,0 +1,25 @@
+/* Reset simple */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Fond global */
+body {
+    background: #020617; /* même couleur que ton app */
+    color: #e5e7eb;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+}
+
+/* Le root prend toute la largeur / hauteur */
+#root {
+    min-height: 100vh;
+}
