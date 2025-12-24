@@ -33,7 +33,7 @@ public class EnrollmentManager {
         Enrollment e = Enrollment.builder()
                 .courseId(courseId)
                 .studentId(studentId)
-                .status("ENROLLED")   // tu pourras mettre COMPLETED plus tard
+                .status("ENROLLED")
                 .date(LocalDate.now().toString())
                 .build();
 

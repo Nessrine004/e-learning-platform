@@ -1,6 +1,7 @@
 package org.example.courseservice.service;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -20,7 +21,7 @@ public class YoutubeVideoService {
     }
 
     public Map<String, Object> searchVideos(String query, int maxResults) {
-        Mono<Map> responseMono = youtubeWebClient.get()
+        Mono<Map<String, Object>> responseMono = youtubeWebClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .path("/search")
                         .queryParam("part", "snippet")
@@ -30,7 +31,7 @@ public class YoutubeVideoService {
                         .queryParam("key", apiKey)
                         .build())
                 .retrieve()
-                .bodyToMono(Map.class);
+                .bodyToMono(new ParameterizedTypeReference<Map<String, Object>>() {});
 
         return responseMono.block();
     }

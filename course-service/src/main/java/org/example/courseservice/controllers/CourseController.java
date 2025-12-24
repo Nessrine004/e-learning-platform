@@ -24,7 +24,8 @@ public class CourseController {
 
     @GetMapping("/{id}")
     public Course getCourse(@PathVariable Long id) {
-        return repo.findById(id).orElse(null);
+        return repo.findById(id).orElseThrow(() -> new RuntimeException("Course not found: " + id));
+
     }
 
     @PostMapping

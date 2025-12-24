@@ -6,8 +6,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
+import lombok.extern.slf4j.Slf4j;
+
 
 @SpringBootApplication
+@Slf4j
 public class CourseServiceApplication {
 
     public static void main(String[] args) {
@@ -18,7 +21,7 @@ public class CourseServiceApplication {
     CommandLineRunner init(CourseRepository repo) {
         return args -> {
 
-            System.out.println(" Initialisation des cours professionnels...");
+            log.info(" Initialisation des cours professionnels...");
 
             repo.save(Course.builder()
                     .title("Administration Oracle")
@@ -52,7 +55,7 @@ public class CourseServiceApplication {
                     .duration(30)
                     .build());
 
-            System.out.println(" Données insérées dans la base course-db!");
+            log.info(" Données insérées dans la base course-db!");
         };
     }
 

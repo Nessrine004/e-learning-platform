@@ -26,6 +26,11 @@ export default defineConfig({
                 target: 'http://localhost:8086',
                 changeOrigin: true,
             },
+            '/api/courses/youtube/search': {
+                target: 'http://localhost:8081',
+                changeOrigin: true,
+            },
+
         },
     },
 })

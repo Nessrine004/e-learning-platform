@@ -224,5 +224,4 @@ npm install
 npm run dev
 
 Application accessible sur :
-
-👉 http://localhost:5173
+ http://localhost:5173
